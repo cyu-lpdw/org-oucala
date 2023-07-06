@@ -1,0 +1,8 @@
+[submodule "src/app"]
+	path = src/app
+	url = git@github.com:cyu-lpdw/org-oucala-app.git
+	branch = main
+[submodule "src/back"]
+	path = src/back
+	url = git@github.com:cyu-lpdw/org-oucala-back.git
+	branch = main 
