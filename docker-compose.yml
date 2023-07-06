@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+
+  # Database.
+  db:
+    image: mongo:6.0.3
+    volumes:
+      - .data/db/db/data:/db/data:rw
+
+  # API server (backend).
+  api:
+    image: oucala-back 
+    depends_on: [ "db" ]
+    links: [ "db" ]
+    volumes:
+      - ./src/back:/app/src:rw
+    ports:
+      - "8080:8080"
