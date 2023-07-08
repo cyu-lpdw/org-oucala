@@ -15,6 +15,7 @@ services:
     links: [ "db" ]
     volumes:
       - ./src/back/src:/app/src:rw
+    command: ['run', 'npm', 'start']
     ports:
       - "8080:8080"
 
