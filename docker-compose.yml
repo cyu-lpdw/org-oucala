@@ -20,12 +20,11 @@ services:
       - "8080:8080"
 
   # Application (frontend).
-#  app:
-#    image: docker.io/deepnox/org-oucala-app:0.0.1
-#    build: src/app/
-#    depends_on: [ "db" ]
-#    links: [ "db" ]
-#    volumes:
-#      - ./src/app/src:/app/src:rw
-#    ports:
-#      - "8080:8080"
+  app:
+    image: docker.io/deepnox/org-oucala-app:0.0.1
+    depends_on: [ "db" ]
+    links: [ "db" ]
+    volumes:
+      - ./src/app/src:/app/src:rw
+    ports:
+      - "3000:3000"
