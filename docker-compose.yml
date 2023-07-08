@@ -10,10 +10,22 @@ services:
 
   # API server (backend).
   api:
-    image: oucala-back 
+    #image: oucala-back
+    build: src/back/
     depends_on: [ "db" ]
     links: [ "db" ]
     volumes:
-      - ./src/back:/app/src:rw
+      - ./src/back/src:/app/src:rw
+    ports:
+      - "8080:8080"
+
+  # Application (frontend).
+  app:
+    #image: oucala-app
+    build: src/app/
+    depends_on: [ "db" ]
+    links: [ "db" ]
+    volumes:
+      - ./src/app/src:/app/src:rw
     ports:
       - "8080:8080"
