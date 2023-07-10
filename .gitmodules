@@ -6,3 +6,7 @@
 	path = src/back
 	url = git@github.com:cyu-lpdw/org-oucala-back.git
 	branch = main 
+[submodule "ops"]
+	path = ops
+	url = git@github.com:cyu-lpdw/org-oucala-ops.git
+	branch = main
