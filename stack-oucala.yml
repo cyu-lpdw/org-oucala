@@ -21,7 +21,7 @@ services:
         traefik.docker.network: "traefik-net"
         traefik.enable: "true"
         traefik.http.routers.oucala-api.entrypoints: "https"
-        traefik.http.routers.oucala-api.rule: "Host(`api.${APP_ENV}.oucala.org`)"
+        traefik.http.routers.oucala-api.rule: "Host(`api.oucala.org`)"
         #traefik.http.routers.oucala-api.service: "api@internal"
         traefik.http.routers.oucala-api.tls.certresolver: "letsEncrypt"
         traefik.http.routers.oucala-api.tls.options: "modern@file"
@@ -36,14 +36,12 @@ services:
     image: deepnox/oucala-app
     networks: [traefik-net]
     depends_on: [ "api" ]
-    volumes:
-    #  - ./src/app/packages/@WorldCitiesService/web:/app/packages/@WorldCitiesService/web:rw
     deploy:
       labels:
         traefik.docker.network: "traefik-net"
         traefik.enable: "true"
         traefik.http.routers.oucala.entrypoints: "https"
-        traefik.http.routers.oucala.rule: "Host(`app.${APP_ENV}.oucala.org`)"
+        traefik.http.routers.oucala.rule: "Host(`www.oucala.org`)"
         #traefik.http.routers.oucala.service: "api@internal"
         traefik.http.routers.oucala.tls.certresolver: "letsEncrypt"
         traefik.http.routers.oucala.tls.options: "modern@file"
